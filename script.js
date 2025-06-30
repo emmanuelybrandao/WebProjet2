@@ -1,17 +1,15 @@
 function jogoNumeroSecreto() {
     alert('Seja bem-vindo ao nosso jogo!');
 
-    // Gera um número secreto aleatório entre 1 e 10
     let numeroSecreto = 5;
-    console.log(numeroSecreto); // (Para testes, pode remover depois)
+    console.log(numeroSecreto);
 
-    // Variável para armazenar o chute do usuário
     let chute;
-    let tentativas = 0; // Inicia o contador de tentativas
+    let tentativas = 0;
 
     while (chute != numeroSecreto) {
     chute = parseInt(prompt('Escolha um número entre 1 e 10'));
-    tentativas++; // Soma +1 a cada tentativa
+    tentativas++; 
 
     if (chute == numeroSecreto) {
     alert(`Parabéns! Você acertou o número secreto ${numeroSecreto} na tentativa ${tentativas}.`);
@@ -40,7 +38,7 @@ function jogoMedia() {
 
         if (entrada.trim() === "" || entrada === null || isNaN(numero)) {
         alert("Valor inválido. Digite um número.");
-        i--; // repetir a rodada
+        i--; 
         continue;
         }
 
