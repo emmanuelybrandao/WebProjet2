@@ -1,4 +1,4 @@
-function jogoNumeroSecreto() {
+function iniciarJogo1(){ 
     alert('Seja bem-vindo ao nosso jogo!');
 
     let numeroSecreto = 5;
@@ -21,7 +21,7 @@ function jogoNumeroSecreto() {
     }
 }
 
-function jogoMedia() {
+function iniciarJogo2(){ 
     alert("Bem-vindo ao Jogo da Média!");
 
     let quantidade = prompt("Quantos números você quer digitar?");
@@ -51,27 +51,11 @@ function jogoMedia() {
     } 
 }
 
-function somaNumeros() {
-    let entrada = prompt("Digite os números que deseja somar (separados por vírgula). Use ponto (.) para números decimais:");
+function iniciarJogo3() {
+  let num1 = parseInt(prompt("Digite o primeiro número inteiro:"));
+  let num2 = parseInt(prompt("Digite o segundo número inteiro:"));
 
-    if (!entrada) {
-    alert("Entrada vazia.");
-    return;
-    }
+  let resultado = num1 + num2;
+  alert("A soma dos números é: " + resultado);
+  }
 
-    let vetSoma = entrada.split(",");
-    let soma = 0;
-
-    for (let i = 0; i < vetSoma.length; i++) {
-    let num = parseFloat(vetSoma[i]);
-
-    if (isNaN(num)) {
-        alert(`Valor inválido detectado: "${vetSoma[i]}"`);
-        return;
-    }
-
-    soma += num;
-    }
-
-    alert(`A soma dos números é: ${soma}`);
-}
