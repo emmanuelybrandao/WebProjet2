@@ -2,14 +2,15 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f1f1f1;
   text-align: center;
-  padding-top: 50px;
+  padding-top: 20px;
 }
 
 .container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 15px;
-  align-items: center;
+  justify-content: center;
+  padding-bottom: 50px;
 }
 
 button {
@@ -25,4 +26,9 @@ button {
 
 button:hover {
   background-color: pink;
+}
+
+.tenor-gif-embed {
+  display: block;
+  margin: 0 auto;
 }

@@ -51,27 +51,34 @@ function jogoMedia() {
     } 
 }
 
-function somaNumeros() {
-    let entrada = prompt("Digite os números que deseja somar (separados por vírgula). Use ponto (.) para números decimais:");
+function carregarMetodoLista() {
+    
+    fetch("metodolista.html")
+        .then(response => response.text())
+        .then(html => {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, "text/html");
+            const conteudo = doc.body.innerHTML;
 
-    if (!entrada) {
-    alert("Entrada vazia.");
-    return;
-    }
+            const container = document.getElementById("conteudo") || criarContainer();
 
-    let vetSoma = entrada.split(",");
-    let soma = 0;
+            container.innerHTML = conteudo;
 
-    for (let i = 0; i < vetSoma.length; i++) {
-    let num = parseFloat(vetSoma[i]);
+            const script = document.createElement("script");
+            script.src = "metodolista.js";
+            document.body.appendChild(script);
 
-    if (isNaN(num)) {
-        alert(`Valor inválido detectado: "${vetSoma[i]}"`);
-        return;
-    }
+            const linkCSS = document.createElement("link");
+            linkCSS.rel = "stylesheet";
+            linkCSS.href = "metodolista.css";
+            document.head.appendChild(linkCSS);
+        })
+        .catch(error => console.error("Erro ao carregar o método lista:", error));
+}
 
-    soma += num;
-    }
-
-    alert(`A soma dos números é: ${soma}`);
+function criarContainer() {
+    const div = document.createElement("div");
+    div.id = "conteudo";
+    document.body.appendChild(div);
+    return div;
 }
